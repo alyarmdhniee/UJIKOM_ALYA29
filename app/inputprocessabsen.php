@@ -8,7 +8,7 @@ echo $nama;
 $cari=$connect->query("select*from siswa where nama like '$nama' and waktu like '%$waktu%'");
 $cek=$cari->num_rows;
 
-if ($cek== ""){
+if (empty($cek)){
  $Save = $connect->query("insert into siswa(nama, keterangan)values('$nama', '$keterangan')");
  ?>
 <script>
